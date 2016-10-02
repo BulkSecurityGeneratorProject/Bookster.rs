@@ -1,0 +1,12 @@
+{
+  "generator-jhipster": {
+    "appsFolders": [
+      "api-gateway",
+      "book-microservice"
+    ],
+    "directoryPath": "../",
+    "useElk": true,
+    "adminPassword": "admin",
+    "jwtSecretKey": "f1b21a5e5770ad1545f52671c728569cdf7f7c6d"
+  }
+}
