@@ -8,7 +8,7 @@ import org.springframework.boot.actuate.metrics.writer.MetricWriter;
 
 /**
  * Log reporter for Spring Boot metrics
- *
+ * <p>
  * Output Spring Boot metrics to logs, using the same format as Dropwizard's Sfl4jReporter
  */
 public class SpectatorLogMetricWriter implements MetricWriter {
@@ -20,30 +20,29 @@ public class SpectatorLogMetricWriter implements MetricWriter {
         String metricContent = metric.getName();
         String[] metricSplit = metricContent.split("\\.");
 
-        String hystrixType="";
-        String serviceName="";
-        String methodName="";
-        String metricName=metricContent;
+        String hystrixType = "";
+        String serviceName = "";
+        String methodName = "";
+        String metricName = metricContent;
 
         // format different types of hystrix metrics
-        if(metricSplit[2].equals("RibbonCommand")){
+        if (metricSplit[2].equals("RibbonCommand")) {
             hystrixType = "hystrix.HystrixCommand.RibbonCommand";
             serviceName = metricSplit[3];
             // remove prefix
             metricName = metricContent.substring(37);
-        }
-        else{
-            if(metricSplit[1].equals("HystrixCommand")){
+        } else {
+            if (metricSplit[1].equals("HystrixCommand")) {
                 hystrixType = "hystrix.HystrixCommand";
                 serviceName = metricSplit[2];
-                methodName= metricSplit[3];
-                metricName= metricContent.substring(23);
+                methodName = metricSplit[3];
+                metricName = metricContent.substring(23);
             }
-            if(metricSplit[1].equals("HystrixThreadPool")){
+            if (metricSplit[1].equals("HystrixThreadPool")) {
                 hystrixType = "hystrix.HystrixThreadPool";
                 serviceName = metricSplit[2];
-                methodName= metricSplit[3];
-                metricName= metricContent.substring(26);
+                methodName = metricSplit[3];
+                metricName = metricContent.substring(26);
             }
         }
 
