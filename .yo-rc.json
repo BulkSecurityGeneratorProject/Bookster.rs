@@ -29,6 +29,7 @@
     "languages": [
       "sr",
       "en"
-    ]
+    ],
+    "herokuAppName": "afternoon-eyrie-31376"
   }
 }
