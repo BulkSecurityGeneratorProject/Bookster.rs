@@ -1,4 +1,4 @@
-# Bookster
+# Bookster  [![Build Status](https://api.travis-ci.org/lklacar/Bookster.rs.svg?branch=master)](https://travis-ci.org/lklacar/Bookster.rs)
 
 This application was generated using JHipster 3.12.2, you can find documentation and help at [https://jhipster.github.io/documentation-archive/v3.12.2](https://jhipster.github.io/documentation-archive/v3.12.2).
 
